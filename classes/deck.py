@@ -32,4 +32,12 @@ class Deck:
         random.shuffle(self.deck)
     
     def next_card(self):
-        return self.deck.pop()
+        try:
+            return self.deck.pop()
+        except IndexError:
+            raise NextCardException()
+
+
+class NextCardException(BaseException):
+    def __init__(self, message:str="No more card in this deck"):
+        super().__init__(message)
