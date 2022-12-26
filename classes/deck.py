@@ -10,7 +10,7 @@ class Deck:
                 self.deck.append(card)
         for value in ["wild", "wild4"]:
             for n in range(0,4):
-                card = Card("special", value)
+                card = Card("z", value)
                 self.deck.append(card)
         for color in ["red", "blue", "yellow", "green"]:
             for n in range(0,2):
@@ -22,7 +22,7 @@ class Deck:
                 self.deck.append(cards)
         self.shuffle()
     
-    def new_round(self, exclude:list):
+    def new_round(self, exclude:list[Card]):
         if Len(self.deck) == 0:
             __init__()
             new_deck = (card for card in self.deck if card not in exclude)
